@@ -11,16 +11,25 @@
 #include "stdafx.h"
 #include "BlockCrushBoard.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 CBlockCrushBoard::CBlockCrushBoard()
 : m_arrBoard(NULL),
   m_nColumns(15), m_nRows(15),
   m_nHeight(35), m_nWidth(35),
+<<<<<<< HEAD
   m_nRemaining(0), m_nColors(3)
+=======
+  m_nRemaining(0)
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 {
 	m_arrColors[0] = RGB(0, 0, 0);
 	m_arrColors[1] = RGB(255, 0, 0);
 	m_arrColors[2] = RGB(255, 255, 64);
 	m_arrColors[3] = RGB(0, 0, 255);
+<<<<<<< HEAD
 	m_arrColors[4] = RGB(0, 255, 0);
 	m_arrColors[5] = RGB(0, 255, 255);
 	m_arrColors[6] = RGB(255, 0, 128);
@@ -51,6 +60,8 @@ CBlockCrushBoard::CBlockCrushBoard(const CBlockCrushBoard& board)
 	for (int row = 0; row < m_nRows; row++)
 		for (int col = 0; col < m_nColumns; col++)
 			m_arrBoard[row][col] = board.m_arrBoard[row][col];
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 }
 
 
@@ -69,7 +80,11 @@ void CBlockCrushBoard::SetupBoard(void)
 	for (int row = 0; row < m_nRows; row++)
 	{
 		for (int col = 0; col < m_nColumns; col++) {
+<<<<<<< HEAD
 			m_arrBoard[row][col] = (rand() % m_nColors) + 1;
+=======
+			m_arrBoard[row][col] = (rand() % 3) + 1;
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 		}
 	}
 

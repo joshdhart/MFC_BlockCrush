@@ -27,20 +27,30 @@ END_MESSAGE_MAP()
 
 // CBlockCrushDoc construction/destruction
 
+<<<<<<< HEAD
 CBlockCrushDoc::CBlockCrushDoc() :
 	m_clickCount(0)
 {
 	m_board = new CBlockCrushBoard();
+=======
+CBlockCrushDoc::CBlockCrushDoc()
+{
+	// TODO: add one-time construction code here
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 }
 
 CBlockCrushDoc::~CBlockCrushDoc()
 {
+<<<<<<< HEAD
 	// Delete the current game board
 	delete m_board;
 	// Delete everything from the undo stack
 	ClearUndo();
 	// Delete everything from the redo stack
 	ClearRedo();
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 }
 
 BOOL CBlockCrushDoc::OnNewDocument()
@@ -49,16 +59,21 @@ BOOL CBlockCrushDoc::OnNewDocument()
 		return FALSE;
 
 	// Set (or reset) the game board
+<<<<<<< HEAD
 	m_board->SetupBoard();
 
 	// Clear the undo/redo stacks
 	ClearUndo();
 	ClearRedo();
+=======
+	m_board.SetupBoard();
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 	return TRUE;
 }
 
 
+<<<<<<< HEAD
 void CBlockCrushDoc::SetNumColors(int nColors)
 {
 	// Set the number of colors
@@ -143,6 +158,8 @@ void CBlockCrushDoc::ClearRedo()
 		m_redo.pop();
 	}
 }
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 
 // CBlockCrushDoc serialization

@@ -11,7 +11,10 @@
 
 #include "BlockCrushDoc.h"
 #include "BlockCrushView.h"
+<<<<<<< HEAD
 #include "OptionsDialog.h"
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -24,6 +27,7 @@ IMPLEMENT_DYNCREATE(CBlockCrushView, CView)
 
 BEGIN_MESSAGE_MAP(CBlockCrushView, CView)
 	ON_WM_LBUTTONDOWN()
+<<<<<<< HEAD
 	ON_WM_ERASEBKGND()
 
 	ON_WM_LBUTTONDOWN()
@@ -43,6 +47,8 @@ BEGIN_MESSAGE_MAP(CBlockCrushView, CView)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_REDO, &CBlockCrushView::OnUpdateEditRedo)
 	ON_COMMAND(ID_EDIT_UNDO, &CBlockCrushView::OnEditUndo)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_UNDO, &CBlockCrushView::OnUpdateEditUndo)
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 END_MESSAGE_MAP()
 
 // CBlockCrushView construction/destruction
@@ -192,6 +198,7 @@ void CBlockCrushView::OnLButtonDown(UINT nFlags, CPoint point)
 		{
 			// Get the count remaining
 			int remaining = pDoc->GetRemainingCount();
+<<<<<<< HEAD
 			int numClicks = pDoc->GetNumClicks();
 			CString message;
 			if (remaining == 0)
@@ -204,6 +211,11 @@ void CBlockCrushView::OnLButtonDown(UINT nFlags, CPoint point)
 				message.Format(_T("No more moves left\nBlocks remaining: %d\nClicks used: %d"),
 					remaining, numClicks);
 			}
+=======
+			CString message;
+			message.Format(_T("No more moves left\nBlocks remaining: %d"),
+				remaining);
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 			// Display the results to the user
 			MessageBox(message, _T("Game Over"), MB_OK | MB_ICONINFORMATION);
 		}
@@ -212,6 +224,7 @@ void CBlockCrushView::OnLButtonDown(UINT nFlags, CPoint point)
 	// Default OnLButtonDown
 	CView::OnLButtonDown(nFlags, point);
 }
+<<<<<<< HEAD
 
 
 void CBlockCrushView::OnLevel3colors()
@@ -426,3 +439,5 @@ void CBlockCrushView::OnUpdateEditUndo(CCmdUI *pCmdUI)
 	// Enable option if it is available
 	pCmdUI->Enable(pDoc->CanUndo());
 }
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de

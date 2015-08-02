@@ -43,6 +43,7 @@ protected:
 public:
 	virtual void OnInitialUpdate();
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+<<<<<<< HEAD
 	afx_msg void OnLevel3colors();
 	afx_msg void OnUpdateLevel3colors(CCmdUI *pCmdUI);
 	afx_msg void OnLevel4colors();
@@ -63,6 +64,8 @@ public:
 	afx_msg void OnUpdateEditRedo(CCmdUI *pCmdUI);
 	afx_msg void OnEditUndo();
 	afx_msg void OnUpdateEditUndo(CCmdUI *pCmdUI);
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 };
 
 #ifndef _DEBUG  // debug version in BlockCrushView.cpp

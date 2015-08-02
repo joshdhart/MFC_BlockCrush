@@ -32,7 +32,11 @@ CBlockCrushApp::CBlockCrushApp()
 {
 	// TODO: replace application ID string below with unique ID string; recommended
 	// format for string is CompanyName.ProductName.SubProduct.VersionInformation
+<<<<<<< HEAD
 	SetAppID(_T("BlockCrush.1.0.0.0"));
+=======
+	SetAppID(_T("BlockCrush.AppID.NoVersion"));
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance

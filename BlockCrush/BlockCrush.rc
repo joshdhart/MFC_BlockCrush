@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // Microsoft Visual C++ generated resource script.
+=======
+//Microsoft Visual C++ generated resource script.
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 //
 #include "resource.h"
 
@@ -16,6 +20,7 @@
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
+<<<<<<< HEAD
 /////////////////////////////////////////////////////////////////////////////
 // English (United States) resources
 
@@ -24,17 +29,29 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
 
 #ifdef APSTUDIO_INVOKED
+=======
+#ifdef APSTUDIO_INVOKED
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 /////////////////////////////////////////////////////////////////////////////
 //
 // TEXTINCLUDE
 //
 
+<<<<<<< HEAD
 1 TEXTINCLUDE 
+=======
+1 TEXTINCLUDE
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 BEGIN
     "resource.h\0"
 END
 
+<<<<<<< HEAD
 2 TEXTINCLUDE 
+=======
+2 TEXTINCLUDE
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 BEGIN
     "#ifndef APSTUDIO_INVOKED\r\n"
     "#include ""targetver.h""\r\n"
@@ -44,7 +61,11 @@ BEGIN
     "\0"
 END
 
+<<<<<<< HEAD
 3 TEXTINCLUDE 
+=======
+3 TEXTINCLUDE
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 BEGIN
     "#define _AFX_NO_OLE_RESOURCES\r\n"
     "#define _AFX_NO_TRACKER_RESOURCES\r\n"
@@ -68,8 +89,19 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
+<<<<<<< HEAD
 IDR_MAINFRAME           ICON                    "res\\BlockCrush.ico"
 IDR_BlockCrushTYPE      ICON                    "res\\BlockCrushDoc.ico"
+=======
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+IDR_MAINFRAME           ICON         "res\\BlockCrush.ico"
+IDR_BlockCrushTYPE         ICON         "res\\BlockCrushDoc.ico"
+#endif
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -81,6 +113,12 @@ BEGIN
     POPUP "&File"
     BEGIN
         MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+<<<<<<< HEAD
+=======
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
         MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_APP_EXIT
     END
@@ -88,6 +126,7 @@ BEGIN
     BEGIN
         MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
         MENUITEM SEPARATOR
+<<<<<<< HEAD
         MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
     END
     POPUP "&Level"
@@ -106,10 +145,23 @@ BEGIN
     POPUP "&Help"
     BEGIN
         MENUITEM "&About BlockCrush...",        ID_APP_ABOUT
+=======
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About BlockCrush...",          ID_APP_ABOUT
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
     END
 END
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 /////////////////////////////////////////////////////////////////////////////
 //
 // Accelerator
@@ -117,6 +169,7 @@ END
 
 IDR_MAINFRAME ACCELERATORS
 BEGIN
+<<<<<<< HEAD
     "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
     VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
     VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
@@ -134,6 +187,26 @@ BEGIN
 END
 
 
+=======
+    "N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY,CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY,CONTROL
+	"Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+	"X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+	"C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+	"V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY,ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY,SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY,CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY,SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY
+    VK_F6,          ID_PREV_PANE,           VIRTKEY,SHIFT
+END
+
+
+
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
@@ -142,11 +215,16 @@ END
 IDD_ABOUTBOX DIALOGEX 0, 0, 170, 120
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About BlockCrush"
+<<<<<<< HEAD
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
+=======
+FONT 8, "MS Shell Dlg"
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,15,15,29,30
     LTEXT           "BlockCrush, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2015",IDC_STATIC,42,26,114,8
+<<<<<<< HEAD
     LTEXT           " - Josh Hartwell - ",IDC_STATIC,42,38,114,8
     LTEXT           "How To Play:",IDC_STATIC,16,50,114,8
     LTEXT           "Find horizontally or vertically ",IDC_STATIC,16,62,114,8
@@ -168,6 +246,16 @@ BEGIN
     LTEXT           "Static",IDC_STATIC_TEXT_1,7,7,59,14,SS_CENTERIMAGE
     LTEXT           "Static",IDC_STATIC_TEXT_2,7,26,59,14,SS_CENTERIMAGE
 END
+=======
+	LTEXT			" - Josh Hartwell - ", IDC_STATIC, 42, 38, 114, 8
+	LTEXT			"How To Play:", IDC_STATIC, 16, 50, 114, 8
+	LTEXT			"Find horizontally or vertically ", IDC_STATIC, 16, 62, 114, 8
+	LTEXT			"matching 'same-color' blocks.", IDC_STATIC, 16, 74, 114, 8
+	LTEXT			"Then just click on them!", IDC_STATIC, 16, 86, 114, 8
+    DEFPUSHBUTTON   "OK",IDOK,113,100,54,14,WS_GROUP
+END
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -175,6 +263,7 @@ END
 // Version
 //
 
+<<<<<<< HEAD
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 1,0,0,1
  PRODUCTVERSION 1,0,0,1
@@ -187,6 +276,20 @@ VS_VERSION_INFO VERSIONINFO
  FILEOS 0x40004L
  FILETYPE 0x1L
  FILESUBTYPE 0x0L
+=======
+VS_VERSION_INFO     VERSIONINFO
+  FILEVERSION       1,0,0,1
+  PRODUCTVERSION    1,0,0,1
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
@@ -194,21 +297,37 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "TODO: <Company name>"
             VALUE "FileDescription", "BlockCrush"
+<<<<<<< HEAD
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "BlockCrush.exe"
             VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
             VALUE "OriginalFilename", "BlockCrush.exe"
             VALUE "ProductName", "TODO: <Product name>"
             VALUE "ProductVersion", "1.0.0.1"
+=======
+            VALUE "FileVersion",     "1.0.0.1"
+            VALUE "InternalName",    "BlockCrush.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename","BlockCrush.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion",  "1.0.0.1"
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
         END
     END
     BLOCK "VarFileInfo"
     BEGIN
+<<<<<<< HEAD
         VALUE "Translation", 0x409, 1200
     END
 END
 
 
+=======
+        VALUE "Translation", 0x0409, 1200
+    END
+END
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 /////////////////////////////////////////////////////////////////////////////
 //
 // DESIGNINFO
@@ -224,6 +343,7 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 55
     END
+<<<<<<< HEAD
 
     IDD_DIALOG_OPTIONS, DIALOG
     BEGIN
@@ -241,6 +361,11 @@ END
 #endif    // APSTUDIO_INVOKED
 
 
+=======
+END
+#endif    // APSTUDIO_INVOKED
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
@@ -248,15 +373,25 @@ END
 
 STRINGTABLE
 BEGIN
+<<<<<<< HEAD
     IDR_MAINFRAME           "BlockCrush\n\nBlockCrush\n\n\nBlockCrush.Document\nBlockCrush.Document"
 END
 
+=======
+// Non-mac-targeting apps remove the two extra substrings
+    IDR_MAINFRAME           "BlockCrush\n\nBlockCrush\n\n\nBlockCrush.Document\nBlockCrush.Document"
+
+END
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "BlockCrush"
     AFX_IDS_IDLEMESSAGE     "Ready"
 END
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 STRINGTABLE
 BEGIN
     ID_INDICATOR_EXT        "EXT"
@@ -266,7 +401,10 @@ BEGIN
     ID_INDICATOR_OVR        "OVR"
     ID_INDICATOR_REC        "REC"
 END
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Create a new document\nNew"
@@ -274,6 +412,7 @@ BEGIN
     ID_FILE_CLOSE           "Close the active document\nClose"
     ID_FILE_SAVE            "Save the active document\nSave"
     ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+<<<<<<< HEAD
 END
 
 STRINGTABLE
@@ -284,6 +423,10 @@ END
 
 STRINGTABLE
 BEGIN
+=======
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
     ID_FILE_MRU_FILE1       "Open this document"
     ID_FILE_MRU_FILE2       "Open this document"
     ID_FILE_MRU_FILE3       "Open this document"
@@ -300,6 +443,7 @@ BEGIN
     ID_FILE_MRU_FILE14      "Open this document"
     ID_FILE_MRU_FILE15      "Open this document"
     ID_FILE_MRU_FILE16      "Open this document"
+<<<<<<< HEAD
 END
 
 STRINGTABLE
@@ -315,6 +459,11 @@ END
 
 STRINGTABLE
 BEGIN
+=======
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
     ID_EDIT_CLEAR           "Erase the selection\nErase"
     ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
     ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
@@ -337,30 +486,43 @@ BEGIN
     AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
     AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
     AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+<<<<<<< HEAD
 END
 
 STRINGTABLE
 BEGIN
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
     AFX_IDS_SCRESTORE       "Restore the window to normal size"
     AFX_IDS_SCTASKLIST      "Activate Task List"
 END
 
+<<<<<<< HEAD
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
+=======
+
+#endif
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
 //
 // Generated from the TEXTINCLUDE 3 resource.
 //
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 #define _AFX_NO_OLE_RESOURCES
 #define _AFX_NO_TRACKER_RESOURCES
 #define _AFX_NO_PROPERTY_RESOURCES
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE 9, 1
+<<<<<<< HEAD
 #include "res\BlockCrush.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"      // Standard components
 #endif
@@ -368,3 +530,9 @@ LANGUAGE 9, 1
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
+=======
+#include "res\\BlockCrush.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"      // Standard components
+#endif
+#endif    // not APSTUDIO_INVOKED
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de

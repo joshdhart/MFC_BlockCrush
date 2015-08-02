@@ -6,7 +6,10 @@
 #pragma once
 
 #include "BlockCrushBoard.h"
+<<<<<<< HEAD
 #include <stack>
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 class CBlockCrushDoc : public CDocument
 {
@@ -23,6 +26,7 @@ public:
 	// Functions for accessing the game board
 	COLORREF GetBoardSpace(int row, int col)
 	{
+<<<<<<< HEAD
 		return m_board->GetBoardSpace(row, col);
 	}
 	void SetupBoard(void)			{ m_board->SetupBoard(); }
@@ -49,6 +53,26 @@ public:
 	bool CanUndo();
 	void RedoLast();
 	bool CanRedo();
+=======
+		return m_board.GetBoardSpace(row, col);
+	}
+	void SetupBoard(void)   { m_board.SetupBoard(); }
+	int GetWidth(void)      { return m_board.GetWidth(); }
+	int GetHeight(void)     { return m_board.GetHeight(); }
+	int GetColumns(void)    { return m_board.GetColumns(); }
+	int GetRows(void)       { return m_board.GetRows(); }
+	void DeleteBoard(void)  { m_board.DeleteBoard(); }
+
+	bool IsGameOver()       { return m_board.IsGameOver(); }
+	int DeleteBlocks(int row, int col)
+	{
+		return m_board.DeleteBlocks(row, col);
+	}
+	int GetRemainingCount()
+	{
+		return m_board.GetRemainingCount();
+	}
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 // Overrides
 public:
@@ -61,6 +85,7 @@ public:
 
 protected:
 
+<<<<<<< HEAD
 	void ClearUndo();
 	void ClearRedo();
 
@@ -72,11 +97,18 @@ protected:
 	std::stack<CBlockCrushBoard*> m_redo;
 
 	int m_clickCount;
+=======
+	// Instance of the game board
+	CBlockCrushBoard m_board;
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 
 // Implementation
 public:
 	virtual ~CBlockCrushDoc();
+<<<<<<< HEAD
 	void SetTitle(LPCTSTR lpszTitle) { CDocument::SetTitle(L"New Game"); }
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;

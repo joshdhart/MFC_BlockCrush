@@ -42,9 +42,12 @@
     <ClInclude Include="BlockCrushBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="OptionsDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BlockCrush.cpp">
@@ -65,9 +68,12 @@
     <ClCompile Include="BlockCrushBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="OptionsDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> 1981c913e5baf2d3842c2b1ef1a4211cd16999de
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BlockCrush.rc">
