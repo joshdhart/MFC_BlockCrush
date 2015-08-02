@@ -11,17 +11,46 @@
 #include "stdafx.h"
 #include "BlockCrushBoard.h"
 
-
 CBlockCrushBoard::CBlockCrushBoard()
 : m_arrBoard(NULL),
   m_nColumns(15), m_nRows(15),
   m_nHeight(35), m_nWidth(35),
-  m_nRemaining(0)
+  m_nRemaining(0), m_nColors(3)
 {
 	m_arrColors[0] = RGB(0, 0, 0);
 	m_arrColors[1] = RGB(255, 0, 0);
 	m_arrColors[2] = RGB(255, 255, 64);
 	m_arrColors[3] = RGB(0, 0, 255);
+	m_arrColors[4] = RGB(0, 255, 0);
+	m_arrColors[5] = RGB(0, 255, 255);
+	m_arrColors[6] = RGB(255, 0, 128);
+	m_arrColors[7] = RGB(0, 64, 0);
+
+	// Create and setup the board
+	SetupBoard();
+}
+
+
+CBlockCrushBoard::CBlockCrushBoard(const CBlockCrushBoard& board)
+{
+	// Copy all of the regular data members
+	m_nColumns = board.m_nColumns;
+	m_nRows = board.m_nRows;
+	m_nHeight = board.m_nHeight;
+	m_nWidth = board.m_nWidth;
+	m_nRemaining = board.m_nRemaining;
+	m_nColors = board.m_nColors;
+	// Copy ove the colors for the board
+	for (int i = 0; i < 8; i++)
+		m_arrColors[i] = board.m_arrColors[i];
+	m_arrBoard = NULL;
+
+	// Create a new game board of the same size
+	CreateBoard();
+	// Copy the contents of the game board
+	for (int row = 0; row < m_nRows; row++)
+		for (int col = 0; col < m_nColumns; col++)
+			m_arrBoard[row][col] = board.m_arrBoard[row][col];
 }
 
 
@@ -40,7 +69,7 @@ void CBlockCrushBoard::SetupBoard(void)
 	for (int row = 0; row < m_nRows; row++)
 	{
 		for (int col = 0; col < m_nColumns; col++) {
-			m_arrBoard[row][col] = (rand() % 3) + 1;
+			m_arrBoard[row][col] = (rand() % m_nColors) + 1;
 		}
 	}
 

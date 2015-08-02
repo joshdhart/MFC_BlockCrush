@@ -11,6 +11,7 @@
 
 #include "BlockCrushDoc.h"
 #include "BlockCrushView.h"
+#include "OptionsDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -23,6 +24,25 @@ IMPLEMENT_DYNCREATE(CBlockCrushView, CView)
 
 BEGIN_MESSAGE_MAP(CBlockCrushView, CView)
 	ON_WM_LBUTTONDOWN()
+	ON_WM_ERASEBKGND()
+
+	ON_WM_LBUTTONDOWN()
+	ON_COMMAND(ID_LEVEL_3COLORS, &CBlockCrushView::OnLevel3colors)
+	ON_UPDATE_COMMAND_UI(ID_LEVEL_3COLORS, &CBlockCrushView::OnUpdateLevel3colors)
+	ON_COMMAND(ID_LEVEL_4COLORS, &CBlockCrushView::OnLevel4colors)
+	ON_UPDATE_COMMAND_UI(ID_LEVEL_4COLORS, &CBlockCrushView::OnUpdateLevel4colors)
+	ON_COMMAND(ID_LEVEL_5COLORS, &CBlockCrushView::OnLevel5colors)
+	ON_UPDATE_COMMAND_UI(ID_LEVEL_5COLORS, &CBlockCrushView::OnUpdateLevel5colors)
+	ON_COMMAND(ID_LEVEL_6COLORS, &CBlockCrushView::OnLevel6colors)
+	ON_UPDATE_COMMAND_UI(ID_LEVEL_6COLORS, &CBlockCrushView::OnUpdateLevel6colors)
+	ON_COMMAND(ID_LEVEL_7COLORS, &CBlockCrushView::OnLevel7colors)
+	ON_UPDATE_COMMAND_UI(ID_LEVEL_7COLORS, &CBlockCrushView::OnUpdateLevel7colors)
+	ON_COMMAND(ID_SETUP_BLOCKCOUNT, &CBlockCrushView::OnSetupBlockcount)
+	ON_COMMAND(ID_SETUP_BLOCKSIZE, &CBlockCrushView::OnSetupBlocksize)
+	ON_COMMAND(ID_EDIT_REDO, &CBlockCrushView::OnEditRedo)
+	ON_UPDATE_COMMAND_UI(ID_EDIT_REDO, &CBlockCrushView::OnUpdateEditRedo)
+	ON_COMMAND(ID_EDIT_UNDO, &CBlockCrushView::OnEditUndo)
+	ON_UPDATE_COMMAND_UI(ID_EDIT_UNDO, &CBlockCrushView::OnUpdateEditUndo)
 END_MESSAGE_MAP()
 
 // CBlockCrushView construction/destruction
@@ -172,9 +192,18 @@ void CBlockCrushView::OnLButtonDown(UINT nFlags, CPoint point)
 		{
 			// Get the count remaining
 			int remaining = pDoc->GetRemainingCount();
+			int numClicks = pDoc->GetNumClicks();
 			CString message;
-			message.Format(_T("No more moves left\nBlocks remaining: %d"),
-				remaining);
+			if (remaining == 0)
+			{
+				message.Format(_T("You WON!!!!!\nBlocks remaining: %d\nClicks used: %d"),
+					remaining, numClicks);
+			}
+			else
+			{
+				message.Format(_T("No more moves left\nBlocks remaining: %d\nClicks used: %d"),
+					remaining, numClicks);
+			}
 			// Display the results to the user
 			MessageBox(message, _T("Game Over"), MB_OK | MB_ICONINFORMATION);
 		}
@@ -182,4 +211,218 @@ void CBlockCrushView::OnLButtonDown(UINT nFlags, CPoint point)
 
 	// Default OnLButtonDown
 	CView::OnLButtonDown(nFlags, point);
+}
+
+
+void CBlockCrushView::OnLevel3colors()
+{
+	ChangeNumColors(3);
+}
+
+
+void CBlockCrushView::OnUpdateLevel3colors(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the check if this is the right level
+	pCmdUI->SetCheck(pDoc->GetNumColors() == 3);
+}
+
+
+void CBlockCrushView::OnLevel4colors()
+{
+	ChangeNumColors(4);
+}
+
+
+void CBlockCrushView::OnUpdateLevel4colors(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the check if this is the right level
+	pCmdUI->SetCheck(pDoc->GetNumColors() == 4);
+}
+
+
+void CBlockCrushView::OnLevel5colors()
+{
+	ChangeNumColors(5);
+}
+
+
+void CBlockCrushView::OnUpdateLevel5colors(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the check if this is the right level
+	pCmdUI->SetCheck(pDoc->GetNumColors() == 5);
+}
+
+
+void CBlockCrushView::OnLevel6colors()
+{
+	ChangeNumColors(6);
+}
+
+
+void CBlockCrushView::OnUpdateLevel6colors(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the check if this is the right level
+	pCmdUI->SetCheck(pDoc->GetNumColors() == 6);
+}
+
+
+void CBlockCrushView::OnLevel7colors()
+{
+	ChangeNumColors(7);
+}
+
+
+void CBlockCrushView::OnUpdateLevel7colors(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the check if this is the right level
+	pCmdUI->SetCheck(pDoc->GetNumColors() == 7);
+}
+
+
+void CBlockCrushView::ChangeNumColors(int num)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Set the number of colors
+	pDoc->SetNumColors(num);
+	// Force the view to redraw
+	Invalidate();
+	UpdateWindow();
+}
+
+void CBlockCrushView::OnSetupBlockcount()
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Create the options dialog
+	COptionsDialog dlg(true, this);
+	// Set the row and column values
+	dlg.m_nValue1 = pDoc->GetRows();
+	dlg.m_nValue2 = pDoc->GetColumns();
+	// Display the dialog
+	if (dlg.DoModal() == IDOK)
+	{
+		// Delete the board
+		pDoc->DeleteBoard();
+		// Get the user selected values
+		pDoc->SetRows(dlg.m_nValue1);
+		pDoc->SetColumns(dlg.m_nValue2);
+		// Update the board
+		pDoc->SetupBoard();
+		// Resize the view
+		ResizeWindow();
+	}
+}
+
+
+void CBlockCrushView::OnSetupBlocksize()
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Create the options dialog
+	COptionsDialog dlg(false, this);
+	// Set the width and height values
+	dlg.m_nValue1 = pDoc->GetWidth();
+	dlg.m_nValue2 = pDoc->GetHeight();
+	// Display the dialog
+	if (dlg.DoModal() == IDOK)
+	{
+		// Delete the board
+		pDoc->DeleteBoard();
+		// Get the user selected values
+		pDoc->SetWidth(dlg.m_nValue1);
+		pDoc->SetHeight(dlg.m_nValue2);
+		// Update the board
+		pDoc->SetupBoard();
+		// Resize the view
+		ResizeWindow();
+	}
+}
+
+
+void CBlockCrushView::OnEditRedo()
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Call undo on the document
+	pDoc->RedoLast();
+	// Force the view to redraw
+	Invalidate();
+	UpdateWindow();
+}
+
+
+void CBlockCrushView::OnUpdateEditRedo(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Enable option if it is available
+	pCmdUI->Enable(pDoc->CanRedo());
+}
+
+
+void CBlockCrushView::OnEditUndo()
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Call undo on the document
+	pDoc->UndoLast();
+	// Force the view to redraw
+	Invalidate();
+	UpdateWindow();
+}
+
+
+void CBlockCrushView::OnUpdateEditUndo(CCmdUI *pCmdUI)
+{
+	// Get a pointer to the document
+	CBlockCrushDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// Enable option if it is available
+	pCmdUI->Enable(pDoc->CanUndo());
 }
